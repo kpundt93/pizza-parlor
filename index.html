@@ -13,8 +13,9 @@
 <body>
   <div class="container">
     <h1>Pundt's Pizzeria</h1>
+    <h2>Build Your Own Pizza</h2>
     <form id="order-form">
-      <h2>Choose a size:</h2>
+      <h3>Choose a size:</h3>
       <div class="form-check" id="size">
         <input class="form-check-input" type="radio" name="size" value="s" checked>
         <label class="form-check-label" for="s">Small</label>
@@ -30,6 +31,57 @@
       <div class="form-check" id="size">
         <input class="form-check-input" type="radio" name="size" value="xl" checked>
         <label class="form-check-label" for="xl">Extra Large</label>
+      </div>
+      <h3>Choose your toppings:</h3>
+      <div class="ingredients" class="veggies">
+        <h4>Veggies (add $1):</h4>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="veg" value="artichoke hearts" checked>
+          <label class="form-check-label" for="artichoke hearts">Artichoke Hearts</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="veg" value="black olives">
+          <label class="form-check-label" for="black olives">Black Olives</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="veg" value="green bell peppers">
+          <label class="form-check-label" for="green bell peppers">Green Bell Peppers</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="veg" value="minced garlic">
+          <label class="form-check-label" for="minced garlic">Minced Garlic</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="veg" value="mushrooms">
+          <label class="form-check-label" for="mushrooms">Mushrooms</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="veg" value="red onion">
+          <label class="form-check-label" for="red onion">Red Onion</label>
+        </div>
+      </div>
+      <div class="ingredients" id="meats">
+        <h4>Meats (add $2):</h4>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="meat" value="canadian bacon" checked>
+          <label class="form-check-label" for="canadian bacon">Canadian Bacon</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="meat" value="chicken">
+          <label class="form-check-label" for="chicken">Chicken</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="meat" value="italian sausage">
+          <label class="form-check-label" for="italian sausage">Italian Sausage</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="meat" value="pepperoni">
+          <label class="form-check-label" for="pepperoni">Pepperoni</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="meat" value="salami">
+          <label class="form-check-label" for="salami">Salami</label>
+        </div>
       </div>
       <button class="btn btn-success">Add to Cart</button>
     </form>
