@@ -4,4 +4,8 @@ function Pizza(size, toppings) {
   this.toppings = [];
 }
 
+Pizza.prototype.addTopping  = function(topping) {
+  this.toppings.push(topping);
+}
+
 // UI logic
