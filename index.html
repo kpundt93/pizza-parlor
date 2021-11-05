@@ -14,7 +14,24 @@
   <div class="container">
     <h1>Pundt's Pizzeria</h1>
     <form id="order-form">
-      
+      <h2>Choose a size:</h2>
+      <div class="form-check" id="size">
+        <input class="form-check-input" type="radio" name="size" value="s" checked>
+        <label class="form-check-label" for="s">Small</label>
+      </div>
+      <div class="form-check" id="size">
+        <input class="form-check-input" type="radio" name="size" value="m" checked>
+        <label class="form-check-label" for="m">Medium</label>
+      </div>
+      <div class="form-check" id="size">
+        <input class="form-check-input" type="radio" name="size" value="l" checked>
+        <label class="form-check-label" for="l">Large</label>
+      </div>
+      <div class="form-check" id="size">
+        <input class="form-check-input" type="radio" name="size" value="xl" checked>
+        <label class="form-check-label" for="xl">Extra Large</label>
+      </div>
+      <button class="btn btn-success">Add to Cart</button>
     </form>
   </div>
 </body>
