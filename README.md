@@ -23,13 +23,26 @@ _The website will allow users to choose the size of their pizza as well as one o
 ```
 Describe: Pizza()
 
-Test: "It will return a Pizza object with properties for size and toppings."
+Test: It will return a Pizza object with properties for size and toppings.
 Code: let newPizza = Pizza("m", ["pepperoni", "olives", "mushrooms"]);
 Expected Output:
-Pizza {
-  size: "m"
-  toppings: ["pepperoni", "olives", "mushrooms"]
-}
+  Pizza {
+    size: "m"
+    toppings: ["pepperoni", "olives", "mushrooms"]
+  }
+```
+```
+Describe: Pizza.prototype.addTopping
+
+Test: It will add a new topping to the toppings array.
+Code: 
+  newPizza.addTopping("pepperoni");
+  newPizza;
+Expected Output:
+  Pizza {
+    size: "m"
+    toppings: ['pepperoni']
+  }
 ```
 
 ## GitHub Pages
