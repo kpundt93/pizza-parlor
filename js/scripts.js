@@ -23,6 +23,10 @@ Pizza.prototype.getPrice = function() {
     return "Choose a size!"
   }
 
+  this.toppings.forEach(function() {
+    price += 1;
+  });
+
   return price;
 };
 
