@@ -45,6 +45,14 @@ Expected Output:
   }
 ```
 
+```
+Describe: Pizza.prototype.getPrice
+
+Test: It will determine the price of the pizza, based on size and toppings
+Code: newPizza.getPrice("m");
+Expected Output: 18
+```
+
 ## GitHub Pages
 _View the project here: https://kpundt93.github.io/pizza-parlor/_
 
