@@ -51,6 +51,7 @@ Describe: Pizza.prototype.getPrice
 Test: It will determine the price of the pizza, based on size.
 Code: newPizza.getPrice();
 Expected Output: 18
+
 Test: It will determine the price of the pizza, based on size and toppings.
 Code: newPizza.getPrice();
 Expected Output: 19
