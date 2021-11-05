@@ -44,12 +44,26 @@ $(document).ready(function() {
   $("form#order-form").submit(function(event) {
     event.preventDefault();
     const size = $("input:radio[name=size]:checked").val();
-    console.log(size);
-    const vegToppings = $("input:checkbox[name=veg]:checked").val();
-    console.log(vegToppings);
-    const meatToppings = $("input:checkbox[name=meat]:checked").val();
-    console.log(meatToppings);
+    let vegToppings = [];
+    let meatToppings = [];
     let newPizza = new Pizza(size, vegToppings, meatToppings);
+
+    $("input:checkbox[name=veg]:checked").each(function(element) {
+      vegToppings.push($(this).val());
+    });
+
+    $("input:checkbox[name=meat]:checked").each(function(element) {
+      meatToppings.push($(this).val());
+    });
+
+    newPizza.addVegTopping(vegToppings);
+    newPizza.addMeatTopping(meatToppings);
+
+    console.log(size);
+    console.log(vegToppings);
+    console.log(meatToppings);
+    console.log(newPizza);
+    
 
   });
 });
