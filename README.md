@@ -24,24 +24,41 @@ _The website will allow users to choose the size of their pizza as well as one o
 Describe: Pizza()
 
 Test: It will return a Pizza object with properties for size and toppings.
-Code: let newPizza = Pizza("m", ["pepperoni", "olives", "mushrooms"]);
+Code: let newPizza = Pizza("m", ["olives", "mushrooms"], ["pepperoni"]);
 Expected Output:
   Pizza {
     size: "m"
-    toppings: ["pepperoni", "olives", "mushrooms"]
+    veg toppings: ["olives", "mushrooms"]
+    meat toppings: ["pepperoni"]
   }
 ```
 ```
-Describe: Pizza.prototype.addTopping
+Describe: Pizza.prototype.addVegTopping
 
-Test: It will add a new topping to the toppings array.
+Test: It will add a new topping to the veggie toppings array.
 Code: 
-  newPizza.addTopping("pepperoni");
+  newPizza.addVegTopping("mushrooms");
   newPizza;
 Expected Output:
   Pizza {
     size: "m"
-    toppings: ['pepperoni']
+    veg toppings: ['mushrooms']
+    meat toppings: []
+  }
+```
+
+```
+Describe: Pizza.prototype.addMeatTopping
+
+Test: It will add a new topping to the meat toppings array.
+Code: 
+  newPizza.addMeatTopping("pepperoni");
+  newPizza;
+Expected Output:
+  Pizza {
+    size: "m"
+    veg toppings: []
+    meat toppings: ['pepperoni']
   }
 ```
 
@@ -49,11 +66,15 @@ Expected Output:
 Describe: Pizza.prototype.getPrice
 
 Test: It will determine the price of the pizza, based on size.
-Code: newPizza.getPrice();
+Code: 
+  let newPizza = new Pizza("m");
+  newPizza.getPrice();
 Expected Output: 18
 
 Test: It will determine the price of the pizza, based on size and toppings.
-Code: newPizza.getPrice();
+Code: 
+  let newPizza = new Pizza("m", ['mushrooms'])
+  newPizza.getPrice();
 Expected Output: 19
 ```
 

@@ -1,5 +1,5 @@
 // Business logic
-function Pizza(size, toppings) {
+function Pizza(size, vegToppings, meatToppings) {
   this.size = size;
   this.toppings = [];
 }
