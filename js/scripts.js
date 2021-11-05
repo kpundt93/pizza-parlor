@@ -1,5 +1,5 @@
 // Business logic
-function Pizza(size, vegToppings, meatToppings) {
+function Pizza(size) {
   this.size = size;
   this.vegToppings = [];
   this.meatToppings = [];
@@ -51,13 +51,12 @@ $(document).ready(function() {
   $("form#order-form").submit(function(event) {
     event.preventDefault();
     const size = $("input:radio[name=size]:checked").val();
+    let pizza = new Pizza(size);
     let vegToppings = [];
     let meatToppings = [];
-    let newPizza = new Pizza(size, vegToppings, meatToppings);
     
     $("input:checkbox[name=veg]:checked").each(function(element) {
       vegToppings.push($(this).val());
-      return vegToppings;
     });
 
     $("input:checkbox[name=meat]:checked").each(function(element) {
@@ -65,18 +64,18 @@ $(document).ready(function() {
     });
 
     if (vegToppings.length !== 0) {
-      newPizza.addVegTopping(vegToppings);
+      pizza.addVegTopping(vegToppings);
     }
     
     if (meatToppings.length !== 0) {
-      newPizza.addMeatTopping(meatToppings);
+      pizza.addMeatTopping(meatToppings);
     }
     
     console.log(size);
     console.log(vegToppings);
     console.log(meatToppings);
-    console.log(newPizza);
-    console.log(newPizza.getPrice());
+    console.log(pizza);
+    console.log(pizza.getPrice());
     
   });
 
