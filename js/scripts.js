@@ -5,38 +5,45 @@ function Pizza(size, vegToppings, meatToppings) {
   this.meatToppings = [];
 }
 
-Pizza.prototype.addVegTopping  = function(vegTopping) {
-  this.vegToppings.push(vegTopping);
+Pizza.prototype.addVegTopping  = function(veg) {
+  this.vegToppings.push(veg);
 };
 
-Pizza.prototype.addMeatTopping  = function(meatTopping) {
-  this.meatToppings.push(meatTopping);
+Pizza.prototype.addMeatTopping  = function(meat) {
+  this.meatToppings.push(meat);
 };
 
 Pizza.prototype.getPrice = function() {
-  let price = 0;
+  let basePrice = 0;
+  let vegPrice = 0;
+  let meatPrice = 0;
+  let totalPrice = 0;
 
   if (this.size === "s") {
-    price = 15;
+    basePrice = 15;
   } else if (this.size === "m") {
-    price = 18;
+    basePrice = 18;
   } else if (this.size === "l") {
-    price = 21;
+    basePrice = 21;
   } else if (this.size === "xl") {
-    price = 24
+    basePrice = 24
   } else {
     return "Choose a size!"
   }
 
   this.vegToppings.forEach(function() {
-    price += 1;
+    vegPrice += 1;
   });
+  console.log(this.vegToppings.length);
 
   this.meatToppings.forEach(function() {
-    price += 2;
+    meatPrice += 2;
   });
+  console.log(this.meatToppings.length);
 
-  return price;
+  totalPrice = basePrice + vegPrice + meatPrice;
+  return totalPrice;
+  
 };
 
 // UI logic
@@ -47,28 +54,30 @@ $(document).ready(function() {
     let vegToppings = [];
     let meatToppings = [];
     let newPizza = new Pizza(size, vegToppings, meatToppings);
-
+    
     $("input:checkbox[name=veg]:checked").each(function(element) {
       vegToppings.push($(this).val());
+      return vegToppings;
     });
 
     $("input:checkbox[name=meat]:checked").each(function(element) {
       meatToppings.push($(this).val());
     });
 
-    newPizza.addVegTopping(vegToppings);
-    newPizza.addMeatTopping(meatToppings);
-
+    if (vegToppings.length !== 0) {
+      newPizza.addVegTopping(vegToppings);
+    }
+    
+    if (meatToppings.length !== 0) {
+      newPizza.addMeatTopping(meatToppings);
+    }
+    
     console.log(size);
     console.log(vegToppings);
-    console.log(vegToppings.length);
     console.log(meatToppings);
-    console.log(meatToppings.length);
     console.log(newPizza);
-
-    
     console.log(newPizza.getPrice());
     
-
   });
+
 });
