@@ -40,3 +40,16 @@ Pizza.prototype.getPrice = function() {
 };
 
 // UI logic
+$(document).ready(function() {
+  $("form#order-form").submit(function(event) {
+    event.preventDefault();
+    const size = $("input:radio[name=size]:checked").val();
+    console.log(size);
+    const vegToppings = $("input:checkbox[name=veg]:checked").val();
+    console.log(vegToppings);
+    const meatToppings = $("input:checkbox[name=meat]:checked").val();
+    console.log(meatToppings);
+    let newPizza = new Pizza(size, vegToppings, meatToppings);
+
+  });
+});

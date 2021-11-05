@@ -76,6 +76,12 @@ Code:
   let newPizza = new Pizza("m", ['mushrooms'])
   newPizza.getPrice();
 Expected Output: 19
+
+Test: It will determine the price of the pizza, based on size and toppings.
+Code: 
+  let newPizza = new Pizza("m", ['mushrooms'], ['pepperoni'])
+  newPizza.getPrice();
+Expected Output: 21
 ```
 
 ## GitHub Pages
