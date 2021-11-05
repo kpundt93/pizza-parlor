@@ -61,8 +61,13 @@ $(document).ready(function() {
 
     console.log(size);
     console.log(vegToppings);
+    console.log(vegToppings.length);
     console.log(meatToppings);
+    console.log(meatToppings.length);
     console.log(newPizza);
+
+    
+    console.log(newPizza.getPrice());
     
 
   });
