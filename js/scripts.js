@@ -1,11 +1,16 @@
 // Business logic
 function Pizza(size, vegToppings, meatToppings) {
   this.size = size;
-  this.toppings = [];
+  this.vegToppings = [];
+  this.meatToppings = [];
 }
 
-Pizza.prototype.addTopping  = function(topping) {
-  this.toppings.push(topping);
+Pizza.prototype.addVegTopping  = function(vegTopping) {
+  this.vegToppings.push(vegTopping);
+};
+
+Pizza.prototype.addMeatTopping  = function(meatTopping) {
+  this.meatToppings.push(meatTopping);
 };
 
 Pizza.prototype.getPrice = function() {
@@ -23,8 +28,12 @@ Pizza.prototype.getPrice = function() {
     return "Choose a size!"
   }
 
-  this.toppings.forEach(function() {
+  this.vegToppings.forEach(function() {
     price += 1;
+  });
+
+  this.meatToppings.forEach(function() {
+    price += 2;
   });
 
   return price;
