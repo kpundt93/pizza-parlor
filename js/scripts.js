@@ -34,16 +34,13 @@ Pizza.prototype.getPrice = function() {
   this.vegToppings.forEach(function() {
     vegPrice += 1;
   });
-  console.log(this.vegToppings.length);
 
   this.meatToppings.forEach(function() {
     meatPrice += 2;
   });
-  console.log(this.meatToppings.length);
 
   totalPrice = basePrice + vegPrice + meatPrice;
   return totalPrice;
-  
 };
 
 // UI logic
@@ -63,18 +60,10 @@ $(document).ready(function() {
 
     let pizza = new Pizza(size, vegToppings, meatToppings);
     let total = pizza.getPrice();
-
-    console.log(size);
-    console.log(vegToppings);
-    console.log(meatToppings);
-    console.log(pizza);
-    console.log(pizza.getPrice());
-
     $("#price").text(total);
   });
 
   $("button#reset").click(function(event) {
     $("#price").text("");
   });
-
 });
