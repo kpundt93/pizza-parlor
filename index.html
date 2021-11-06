@@ -18,23 +18,23 @@
       <h3>Choose a size:</h3>
       <div class="form-check" id="size">
         <input class="form-check-input" type="radio" name="size" value="s" checked>
-        <label class="form-check-label" for="s">Small</label>
+        <label class="form-check-label" for="s">Small - $15.00</label>
       </div>
       <div class="form-check" id="size">
         <input class="form-check-input" type="radio" name="size" value="m">
-        <label class="form-check-label" for="m">Medium</label>
+        <label class="form-check-label" for="m">Medium - $18.00</label>
       </div>
       <div class="form-check" id="size">
         <input class="form-check-input" type="radio" name="size" value="l"
-        <label class="form-check-label" for="l">Large</label>
+        <label class="form-check-label" for="l">Large - $21.00</label>
       </div>
       <div class="form-check" id="size">
         <input class="form-check-input" type="radio" name="size" value="xl"
-        <label class="form-check-label" for="xl">Extra Large</label>
+        <label class="form-check-label" for="xl">Extra Large - $24.00</label>
       </div>
       <h3>Choose your toppings:</h3>
       <div class="ingredients" id="veggies">
-        <h4>Veggies (add $1):</h4>
+        <h4>Veggies (add $1.00):</h4>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="veg" value="artichoke hearts">
           <label class="form-check-label" for="artichoke hearts">Artichoke Hearts</label>
@@ -61,7 +61,7 @@
         </div>
       </div>
       <div class="ingredients" id="meats">
-        <h4>Meats (add $2):</h4>
+        <h4>Meats (add $2.00):</h4>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" name="meat" value="canadian bacon">
           <label class="form-check-label" for="canadian bacon">Canadian Bacon</label>
@@ -83,10 +83,11 @@
           <label class="form-check-label" for="salami">Salami</label>
         </div>
       </div>
-      <button class="btn btn-success">Add to Cart</button>
+      <button class="btn btn-success" type="submit">Add to Cart</button>
+      <button id="reset" class="btn btn-danger" type="reset">Reset</button>
     </form>
 
-    <div id="price"></div>
+    <div id="total"></div>
   </div>
 </body>
 </html>
