@@ -1,37 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat&display=swap');
 
+body {
+  background-image: url(../img/background-color.jpg);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background:rgb(255, 255, 255, 0.9);
+  text-align: center;
+}
+
 h1 {
   font-family: 'Amatic SC', cursive;
   font-weight: 700;
   font-size: 8em;
-  text-align: center;
+}
+
+nav {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+}
+
+nav li {
+  margin: 0 auto;
+}
+
+nav li:hover {
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid black;
 }
 
 h2 {
   font-family: 'Amatic SC', cursive;
   font-weight: 700;
   font-size: 5.5em;
-  text-align: center;
 }
 
 h3 {
   font-family: 'Amatic SC', cursive;
   font-size: 4.5em;
   font-weight: 700;
+  padding-top: 0.5em;
 }
 
 h4 {
   font-family: 'Amatic SC', cursive;
   font-size: 3.5em;
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
 }
 
 .toppings-price {
   font-family: 'Montserrat', sans-serif;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.15em;
 }
 
 label {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.25em;
+}
+
+input.form-check-input:hover {
+  cursor: pointer;
+}
+
+#buttons {
+  margin: 0 auto;
+  padding-top: 4em;
+}
+
+button#submit {
+  margin-right: 1em;
+}
+
+#total {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+  font-size: 3em;
+  padding: 1em;
 }
