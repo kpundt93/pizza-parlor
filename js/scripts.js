@@ -70,11 +70,11 @@ $(document).ready(function() {
     console.log(pizza);
     console.log(pizza.getPrice());
 
-    $("#total").text("Total: $" + total);
+    $("#price").text(total);
   });
 
   $("button#reset").click(function(event) {
-    $("#total").text("");
+    $("#price").text("");
   });
 
 });
