@@ -5,13 +5,13 @@ function Pizza(size, vegToppings, meatToppings) {
   this.meatToppings = meatToppings;
 }
 
-// Pizza.prototype.addVegTopping  = function(veg) {
-//   this.vegToppings.push(veg);
-// };
+Pizza.prototype.addVegTopping  = function(veg) {
+  this.vegToppings.push(veg);
+};
 
-// Pizza.prototype.addMeatTopping  = function(meat) {
-//   this.meatToppings.push(meat);
-// };
+Pizza.prototype.addMeatTopping  = function(meat) {
+  this.meatToppings.push(meat);
+};
 
 Pizza.prototype.getPrice = function() {
   let basePrice = 0;
@@ -52,31 +52,29 @@ $(document).ready(function() {
     event.preventDefault();
     const size = $("input:radio[name=size]:checked").val();
     let vegToppings = [];
-    let meatToppings = [];
-    let pizza = new Pizza(size, vegToppings, meatToppings);
-    
     $("input:checkbox[name=veg]:checked").each(function(element) {
       vegToppings.push($(this).val());
     });
 
+    let meatToppings = [];
     $("input:checkbox[name=meat]:checked").each(function(element) {
       meatToppings.push($(this).val());
     });
 
-    // if (vegToppings.length !== 0) {
-    //   pizza.addVegTopping(vegToppings);
-    // }
-    
-    // if (meatToppings.length !== 0) {
-    //   pizza.addMeatTopping(meatToppings);
-    // }
-    
+    let pizza = new Pizza(size, vegToppings, meatToppings);
+    let total = pizza.getPrice();
+
     console.log(size);
     console.log(vegToppings);
     console.log(meatToppings);
     console.log(pizza);
     console.log(pizza.getPrice());
-    
+
+    $("#total").text("Total: $" + total);
+  });
+
+  $("button#reset").click(function(event) {
+    $("#total").text("");
   });
 
 });
